@@ -1,4 +1,13 @@
+.text {
+  color: #5A4586;
+}
+span {
+  color: #5A4586;
+}
+label {
+  color: #5A4586;
+}
 body {
-  background: #9185C6;
+  background: #dff4f3;
 }
 /*# sourceMappingURL=style.css.map */
