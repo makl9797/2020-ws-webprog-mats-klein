@@ -1,2 +1,2 @@
 console.log("Test");
-//# sourceMappingURL=wall.js.map
+console.log("Test2");
