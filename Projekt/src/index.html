@@ -5,8 +5,33 @@
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="style/style.css" />
     <script type="text/javascript" src="../build/wall.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 </head>
 <body>
-<h1>Test</h1>
+
+<div id="header" class="container">
+    <div id="picture" class="wrapper">
+        <img>
+        <h1>Twitter-Wall</h1>
+    </div>
+    <div id="navi" class="wrapper">
+        <label>Search for tweets</label>
+        <input type="search" id="tweet-search" class="search">
+    </div>
+    <div id="logo" class="wrapper"></div>
+</div>
+
+<div id="content" class="container">
+    <article id="first-tweet" class="tweet">
+        <label class="user">Mats</label>
+        <time class="date"></time>
+        <span class="message"></span>
+    </article>
+</div>
+
+<div id="footer" class="container">
+
+</div>
+
 </body>
 </html>

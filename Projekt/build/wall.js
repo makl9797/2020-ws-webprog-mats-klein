@@ -1,2 +1,2 @@
-console.log("Test");
-console.log("Test2");
+window.onload = function () {
+};
