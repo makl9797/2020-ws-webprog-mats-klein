@@ -70,4 +70,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Jetbrains IDEA Files
+.idea
+
 # End of https://www.gitignore.io/api/osx,linux,windows
