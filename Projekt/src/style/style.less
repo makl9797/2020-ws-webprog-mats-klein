@@ -5,13 +5,56 @@
   third: #878ecd;
   text: #5A4586;
 }
+.tweet{
+  background: #colors[primary];
+  border-color: #colors[third];
+  border-style: solid;
+  border-radius: 0.25em;
+  margin: 0.1em;
+  width: auto;
+  height: auto;
+}
 
 .text{
   color: #colors[text];
+  font-family: Helvetica;
+  text-align: center;
+}
+
+article{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 20% 80%;
+  grid-template-areas:
+  "Name Date"
+  "Message Message";
+  background-image: url("../images/hashtag.png");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+}
+
+.user{
+  font-size: 1.25em;
+  margin-top: 0.25em;
+  grid-area: Name;
+}
+
+.date{
+  .user();
+  font-size: 1em;
+  grid-area: Date;
+}
+
+.message{
+  margin: 1em;
+  grid-area: Message;
 }
 
 span{
  .text();
+
 }
 
 label{
