@@ -17,7 +17,6 @@ article {
   grid-template-columns: 50% 50%;
   grid-template-rows: 20% 80%;
   grid-template-areas: "Name Date" "Message Message";
-  background-image: url("../images/hashtag.png");
   background-position: center;
   background-size: cover;
   position: relative;
