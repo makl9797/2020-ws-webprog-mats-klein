@@ -12,6 +12,14 @@ window.onload = function () {
         })
     }
 
+    function initButtons (){
+        let submit = document.getElementById("submitSearch");
+        submit.addEventListener("click",search());
+    }
+
+    function search (){
+        let search = document.getElementById("tweet-search");
+    }
 
     function insertTweets(data){
         data.dummy.forEach(function (tweet){

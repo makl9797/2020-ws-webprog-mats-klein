@@ -9,6 +9,13 @@ window.onload = function () {
             insertTweets(data);
         });
     }
+    function initButtons() {
+        var submit = document.getElementById("submitSearch");
+        submit.addEventListener("click", search());
+    }
+    function search() {
+        var search = document.getElementById("tweet-search");
+    }
     function insertTweets(data) {
         data.dummy.forEach(function (tweet) {
             createTweet(tweet);
