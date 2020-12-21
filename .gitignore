@@ -72,6 +72,7 @@ $RECYCLE.BIN/
 
 # Editor directories and files
 .idea
+.run
 .vscode
 *.suo
 *.ntvs*
