@@ -5,12 +5,11 @@
       <v-card
         :elevation="hover ? 8 : 0"
         outlined color="deep-purple lighten-4"
-        min-width="200"
-        max-width="300"
         @click="toggleOverlay">
         <v-img
-          :src="'media' in streamedTweet.includes && 'url' in streamedTweet.includes.media[0] ? streamedTweet.includes.media[0].url : images.altImg.src"
-          height="auto"
+          :src="'media' in streamedTweet.includes && 'url' in streamedTweet.includes.media[0] ? streamedTweet.includes.media[0].url : 'test'"
+          :width="'media' in streamedTweet.includes && 'url' in streamedTweet.includes.media[0] ? 'auto' : '200'"
+          max-width="400"
           :gradient="'media' in streamedTweet.includes && 'url' in streamedTweet.includes.media[0] ? 'to top right, rgba(255,255,255,.8), rgba(255,255,255,.8)' : images.altImg.gradient">
           <div
             class="fill-height transparent-overlay">
@@ -37,17 +36,17 @@
             </v-row>
           </div>
         </v-img>
-        <v-overlay
-          :value="isClicked"
-          v-if="'media' in streamedTweet.includes && 'url' in streamedTweet.includes.media[0]">
-          <v-card>
-            <v-img
-              contain
-              max-width="500"
-              :src="streamedTweet.includes.media[0].url">
-            </v-img>
-          </v-card>
-        </v-overlay>
+          <v-overlay
+            :value="isClicked"
+            v-if="'media' in streamedTweet.includes && 'url' in streamedTweet.includes.media[0]">
+            <v-card>
+              <v-img
+                contain
+                max-width="500"
+                :src="streamedTweet.includes.media[0].url">
+              </v-img>
+            </v-card>
+          </v-overlay>
       </v-card>
     </template>
   </v-hover>
@@ -70,6 +69,11 @@ export default {
           src: 'https://2.bp.blogspot.com/-F3_7KEgYfnQ/Wk3lernyFiI/AAAAAAAAkr8/WIfx1yUUQnU3BVdHiVktXXYMtfJ30JjWACLcBGAs/s1600/48bc1ae88f43aa9845403d378ecdb830--wedding-hashtag-generator-being-used.jpg',
           gradient: 'to top right, rgba(255,255,255,.99), rgba(255,255,255,.95)'
         }
+        /*
+        min-width="250"
+        max-width="500"
+        max-height="300"
+         */
       }
     }
   },
