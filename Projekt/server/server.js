@@ -1,6 +1,14 @@
 // Importing required modules
 const cors = require('cors');
 const express = require('express');
+const mongoose = require('mongoose');
+const mongoDB = require('./mongoDB-config');
+
+// connect to database
+mongoose.connect(mongoDB.uri, { useNewUrlParser: true }).then(
+    () => {console.log('Connected to DataBase') },
+    err => { console.log('Can not connect to the database'+ err)}
+);
 
 // parse env variables
 require('dotenv').config();
