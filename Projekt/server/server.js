@@ -1,37 +1,36 @@
 // Importing required modules
-const cors = require('cors');
-const express = require('express');
-const mongoose = require('mongoose');
-const mongoDB = require('./mongoDB-config');
+const cors = require('cors')
+const express = require('express')
+const myTweets = require('./routes/myTweets')
+const mongoose = require('mongoose')
+const mongoDB = require('./mongoDB-config')
 
 // connect to database
 mongoose.connect(mongoDB.uri, { useNewUrlParser: true }).then(
     () => {console.log('Connected to DataBase') },
     err => { console.log('Can not connect to the database'+ err)}
-);
+)
 
 // parse env variables
-require('dotenv').config();
+require('dotenv').config()
 
 // Configuring port
-const port = process.env.PORT || 9000;
+const PORT = process.env.PORT || 9000
 
-const app = express();
+const APP = express()
 
 // Configure middlewares
-app.use(cors());
-app.use(express.json());
-
-app.set('view engine', 'html');
+APP.use(cors())
+APP.use(express.json())
 
 // Static folder
-app.use(express.static(__dirname + '/views/'));
+APP.use(express.static(__dirname + '/views/'))
 
 // Defining route middleware
-app.use('/api', require('./routes/api'));
+APP.use('/', myTweets)
 
 // Listening to port
-app.listen(port);
-console.log(`Listening On http://localhost:${port}/api`);
+APP.listen(PORT)
+console.log(`Listening On http://localhost:${PORT}`)
 
-module.exports = app;
+module.exports = APP
