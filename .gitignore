@@ -84,6 +84,8 @@ $RECYCLE.BIN/
 node_modules
 /dist
 
+# config files with sensitve data
+server-config.json
 
 # local env files
 .env.local

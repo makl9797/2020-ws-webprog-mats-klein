@@ -1,0 +1,10 @@
+{
+    "mongodb":{
+        "username": "",
+        "password": "",
+        "uri": "mongodb://localhost:27017/tweets`"
+    },
+    "bearer": {
+        "token": "Bearer AAAAAAAAAAAAAAAAAAAAANh5JwEAAAAAIpo4uv4P0HTUtdR%2B7jko6%2F74N2c%3DXVl5N5JFkUu0nsm2p8yVCOE0XGs7n6ZnS19K4Wk1rJvfeJHmVv"
+    }
+}

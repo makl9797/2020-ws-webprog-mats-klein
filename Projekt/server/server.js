@@ -3,10 +3,10 @@ const cors = require('cors')
 const express = require('express')
 const myTweets = require('./routes/myTweets')
 const mongoose = require('mongoose')
-const mongoDB = require('./mongoDB-config')
+const settings = require('./server-config.json')
 
 // connect to database
-mongoose.connect(mongoDB.uri, { useNewUrlParser: true }).then(
+mongoose.connect(settings.mongodb.uri, { useUnifiedTopology: true, useNewUrlParser:true}).then(
     () => {console.log('Connected to DataBase') },
     err => { console.log('Can not connect to the database'+ err)}
 )
