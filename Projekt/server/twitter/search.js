@@ -22,9 +22,6 @@ const recentSearch = function () {
     return data
 }
 
-module.exports = {
-    json: recentSearch("")
-}
 
 
 

@@ -1,7 +1,7 @@
 // Importing required modules
 const cors = require('cors')
 const express = require('express')
-const myTweets = require('./routes/myTweets')
+const myTweets = require('./routes/routing')
 const mongoose = require('mongoose')
 const settings = require('./server-config.json')
 
