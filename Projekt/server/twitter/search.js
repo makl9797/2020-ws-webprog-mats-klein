@@ -11,7 +11,7 @@ const requestOptions = {
     redirect: 'follow'
 };
 
-const recentSearch = function () {
+const recentSearch = function (req, res, next) {
     console.log("Test")
     let data = null
     fetch("https://api.twitter.com/2/tweets/search/recent?query=dogs", requestOptions)

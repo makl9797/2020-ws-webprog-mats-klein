@@ -5,7 +5,7 @@
     hide-details
     label="Suche nach Tweets..."
     append-icon="mdi-magnify"
-    class="align-self-center text--black white"
+    class="align-self-center text--black red_det"
   />
 </template>
 
@@ -16,5 +16,7 @@ export default {
 </script>
 
 <style scoped>
-
+.red_det{
+  background: #c4fc76;
+}
 </style>
