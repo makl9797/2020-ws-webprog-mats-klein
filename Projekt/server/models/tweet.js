@@ -7,7 +7,7 @@ let tweet = new Schema({
             type: String,
             required: true
         },
-        date: {
+        created_at: {
             type: Date,
             required: true
         },
@@ -30,5 +30,6 @@ let tweet = new Schema({
         collection: 'Tweet'
     }
 )
+
 
 module.exports = mongoose.model('Tweet', tweet)

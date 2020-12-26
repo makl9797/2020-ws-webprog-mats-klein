@@ -25,8 +25,8 @@ P3P: CP="This is not a P3P policy! See g.co/p3phelp for more info."
 Server: gws
 X-XSS-Protection: 0
 X-Frame-Options: SAMEORIGIN
-Set-Cookie: CGIC=; expires=Thu, 20-May-2021 11:14:19 GMT; path=/complete/search; domain=.google.com; HttpOnly
-Set-Cookie: CGIC=; expires=Thu, 20-May-2021 11:14:19 GMT; path=/search; domain=.google.com; HttpOnly
+Set-Cookie: CGIC=; expires=Thu, 20-May-2021 11:14:19 GMT; path=/complete/tweetList; domain=.google.com; HttpOnly
+Set-Cookie: CGIC=; expires=Thu, 20-May-2021 11:14:19 GMT; path=/tweetList; domain=.google.com; HttpOnly
 Set-Cookie: NID=204=RHmY6NwKadSOTWAe2ZA9lsJsQAE3UKuQOLaeE1rENhWr85IGKvMcq9GSoxpBeevtY9hMpoO9A8VXz15lcZoK5rw-_ZnEboUcCrV0sYGygKBVkbXGCpjFVnTSi9Hw4W9nquGSf_RZFGPepZ61GnSduYpxITqP-vRnHVfYX5-jlAY; expires=Sun, 23-May-2021 11:14:19 GMT; path=/; domain=.google.com; HttpOnly
 Accept-Ranges: none
 Vary: Accept-Encoding

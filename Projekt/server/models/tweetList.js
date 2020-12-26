@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-let search = new Schema({
+let tweetList = new Schema({
         tweets: {
             type: [Schema.Types.ObjectId],
             ref: 'Tweet',
@@ -17,19 +17,16 @@ let search = new Schema({
             type:String,
             required: true
         },
-        refresh_date: {
-            type: Date,
-            required: true
-        },
         search_type: {
             type: String,
-            enum: ['HASHTAG', 'KEYWORD'],
+            enum: ['HASHTAG', 'KEYWORD', 'PROFILE'],
             required: true
         }
     },
     {
-        collection: 'Search'
+        timestamps: true,
+        collection: 'TweetList'
     }
 )
 
-module.exports = mongoose.model('Search', search)
+module.exports = mongoose.model('TweetList', tweetList)

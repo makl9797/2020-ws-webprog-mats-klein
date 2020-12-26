@@ -1,7 +1,7 @@
 // Importing required modules
 const cors = require('cors')
 const express = require('express')
-const myTweets = require('./routes/routing')
+const tweets = require('./routes/tweets')
 const mongoose = require('mongoose')
 const settings = require('./server-config.json')
 
@@ -27,7 +27,7 @@ APP.use(express.json())
 APP.use(express.static(__dirname + '/views/'))
 
 // Defining route middleware
-APP.use('/', myTweets)
+APP.use('/search', tweets)
 
 // Listening to port
 APP.listen(PORT)
