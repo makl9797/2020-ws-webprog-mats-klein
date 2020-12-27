@@ -8,20 +8,20 @@ let tweetModel = new Schema({
             required: true
         },
         created_at: {
-            type: Date,
+            type: String,
             required: true
         },
         author: {
-            type: Schema.Types.ObjectId,
+            type: String,
             ref: 'Author',
             required: true
         },
         media: {
-            type: Schema.Types.ObjectId,
+            type: String,
             ref: 'Media'
         },
         tweetLists: {
-            type: [Schema.Types.ObjectId],
+            type: String,
             ref: 'Tweet',
             required: true
         }

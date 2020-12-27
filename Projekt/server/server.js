@@ -2,6 +2,7 @@
 const cors = require('cors')
 const express = require('express')
 const tweets = require('./routes/tweetListRouter')
+const tweet = require('./routes/tweetRouter')
 const mongoose = require('mongoose')
 const settings = require('./server-config.json')
 const twitterConnector = require('./middlewares/twitterConnector')
@@ -28,7 +29,9 @@ APP.use(express.json())
 APP.use(express.static(__dirname + '/views/'))
 
 // Defining route middleware
-APP.use('/search', twitterConnector.recentSearch)
+APP.use('/search', tweets)
+//APP.use('/search', twitterConnector.recentSearch)
+
 
 // Listening to port
 APP.listen(PORT)

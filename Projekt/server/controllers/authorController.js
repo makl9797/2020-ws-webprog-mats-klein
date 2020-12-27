@@ -1,6 +1,15 @@
 const Author = require('../models/authorModel')
 
-exports.create_Author = async function (req, res) {
+exports.get_Author = async (req, res) => {
+    try{
+        const author = Author.find()
+        res.json(author)
+    }catch (err){
+        res.json({"message": err})
+    }
+}
+
+exports.create_Author = async (req, res) => {
     const author = new Author({
         name: req.body.name,
         username: req.body.username,

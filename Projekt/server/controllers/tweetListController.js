@@ -1,29 +1,23 @@
+
+
 const TweetList = require('../models/tweetListModel')
+const twitterConnector = require('../middlewares/twitterConnector')
 
-exports.list_all = function (req, res) {
-    res.send('NOT IMPLEMENTED: Return every list')
-}
 
-exports.list = async function(req, res) {
+exports.list = async (req, res) => {
     const key = req.query.key
     try {
         const list = await TweetList.findOne({keyword: key})
-        console.log(list)
+        if(list == null) await this.create_List(req, res)
         res.json(list)
     }catch (err){
-        res.json(err)
+        console.log(err)
+        res.send(err)
     }
 }
 
-exports.list_with_key = function (req, res) {
-    res.send('NOT IMPLEMENTED: Return list with keyword')
-}
-
-exports.list_with_hashtag = function (req, res) {
-    res.send('NOT IMPLEMENTED: Return list with hashtag')
-}
-
-exports.create_List = async function (req, res) {
+ const create_List = async (req, res, next) =>{
+    await twitterConnector.recentSearch(req.query.key)
     const tweetList = new TweetList({
         tweets: req.body.tweets,
         histories: req.body.histories,
@@ -38,10 +32,3 @@ exports.create_List = async function (req, res) {
     }
 }
 
-exports.add_to_list = function (req, res) {
-    res.send('NOT IMPLEMENTED: Add Tweets to List')
-}
-
-exports.delete_list = function (req, res) {
-    res.send('NOT IMPLEMENTED: Delete TweetList')
-}
