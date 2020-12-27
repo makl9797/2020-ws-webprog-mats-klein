@@ -1,11 +1,12 @@
-const Tweet = require('../models/tweet')
+const Tweet = require('../models/tweetModel')
 
 exports.create_Tweet = async function (req, res) {
-    // TODO Edit tweet input and implement routes
     const tweet = new Tweet({
-        media_type: req.params.media_type,
-        url: req.body.url,
-        preview_url: req.body.preview_url
+        text: req.body.message,
+        created_at: req.body.created_at,
+        author: req.body.author,
+        media: req.body.media,
+        tweetLists: req.body.tweetLists
     })
     try{
         const savedTweet = await tweet.save()

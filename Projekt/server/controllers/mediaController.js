@@ -1,4 +1,4 @@
-const media = require('../models/media')
+const media = require('../models/mediaModel')
 
 exports.create_Media = async function (req, res) {
     const media = new media({

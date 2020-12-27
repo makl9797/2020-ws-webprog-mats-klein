@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-let user = new Schema({
+let userModel = new Schema({
         history: {
             type: Schema.Types.ObjectId,
             ref: 'History',
@@ -24,4 +24,4 @@ let user = new Schema({
     }
 )
 
-module.exports = mongoose.model('User', user)
+module.exports = mongoose.model('User', userModel)

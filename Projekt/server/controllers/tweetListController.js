@@ -1,4 +1,4 @@
-const TweetList = require('../models/tweetList')
+const TweetList = require('../models/tweetListModel')
 
 exports.list_all = function (req, res) {
     res.send('NOT IMPLEMENTED: Return every list')

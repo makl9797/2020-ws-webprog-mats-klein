@@ -1,9 +1,10 @@
 // Importing required modules
 const cors = require('cors')
 const express = require('express')
-const tweets = require('./routes/tweets')
+const tweets = require('./routes/tweetListRouter')
 const mongoose = require('mongoose')
 const settings = require('./server-config.json')
+const twitterConnector = require('./middlewares/twitterConnector')
 
 // connect to database
 mongoose.connect(settings.mongodb.uri, { useUnifiedTopology: true, useNewUrlParser:true}).then(
@@ -27,7 +28,7 @@ APP.use(express.json())
 APP.use(express.static(__dirname + '/views/'))
 
 // Defining route middleware
-APP.use('/search', tweets)
+APP.use('/search', twitterConnector.recentSearch)
 
 // Listening to port
 APP.listen(PORT)

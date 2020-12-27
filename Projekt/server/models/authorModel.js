@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-let author = new Schema({
+let authorModel = new Schema({
         name: {
             type: String,
             required: true
@@ -23,4 +23,4 @@ let author = new Schema({
     }
 )
 
-module.exports = mongoose.model('Author', author)
+module.exports = mongoose.model('Author', authorModel)

@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-let media = new Schema({
+let mediaModel = new Schema({
         media_type: {
             type: String,
             enum: ['IMAGE', 'GIF', 'VIDEO'],
@@ -19,4 +19,4 @@ let media = new Schema({
     }
 )
 
-module.exports = mongoose.model('Media', media)
+module.exports = mongoose.model('Media', mediaModel)

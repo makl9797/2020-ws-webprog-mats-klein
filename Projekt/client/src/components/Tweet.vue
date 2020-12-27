@@ -7,10 +7,10 @@
         outlined color="deep-purple lighten-4"
         @click="toggleOverlay">
         <v-img
-          :src="'media' in streamedTweet.includes && 'url' in streamedTweet.includes.media[0] ? streamedTweet.includes.media[0].url : 'test'"
-          :width="'media' in streamedTweet.includes && 'url' in streamedTweet.includes.media[0] ? 'auto' : '200'"
+          :src="'mediaModel' in streamedTweet.includes && 'url' in streamedTweet.includes.mediaModel[0] ? streamedTweet.includes.mediaModel[0].url : 'test'"
+          :width="'mediaModel' in streamedTweet.includes && 'url' in streamedTweet.includes.mediaModel[0] ? 'auto' : '200'"
           max-width="400"
-          :gradient="'media' in streamedTweet.includes && 'url' in streamedTweet.includes.media[0] ? 'to top right, rgba(255,255,255,.8), rgba(255,255,255,.8)' : images.altImg.gradient">
+          :gradient="'mediaModel' in streamedTweet.includes && 'url' in streamedTweet.includes.mediaModel[0] ? 'to top right, rgba(255,255,255,.8), rgba(255,255,255,.8)' : images.altImg.gradient">
           <div
             class="fill-height transparent-overlay">
             <v-card-title
@@ -26,7 +26,7 @@
             <v-row
               justify="end">
               <v-icon
-                v-if="'media' in streamedTweet.includes"
+                v-if="'mediaModel' in streamedTweet.includes"
                 class="ml-9">mdi-image-size-select-actual
               </v-icon>
               <v-spacer></v-spacer>
@@ -38,12 +38,12 @@
         </v-img>
           <v-overlay
             :value="isClicked"
-            v-if="'media' in streamedTweet.includes && 'url' in streamedTweet.includes.media[0]">
+            v-if="'mediaModel' in streamedTweet.includes && 'url' in streamedTweet.includes.mediaModel[0]">
             <v-card>
               <v-img
                 contain
                 max-width="500"
-                :src="streamedTweet.includes.media[0].url">
+                :src="streamedTweet.includes.mediaModel[0].url">
               </v-img>
             </v-card>
           </v-overlay>

@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-let tweet = new Schema({
-        text: {
+let tweetModel = new Schema({
+        message: {
             type: String,
             required: true
         },
@@ -20,7 +20,7 @@ let tweet = new Schema({
             type: Schema.Types.ObjectId,
             ref: 'Media'
         },
-        searches: {
+        tweetLists: {
             type: [Schema.Types.ObjectId],
             ref: 'Tweet',
             required: true
@@ -32,4 +32,4 @@ let tweet = new Schema({
 )
 
 
-module.exports = mongoose.model('Tweet', tweet)
+module.exports = mongoose.model('Tweet', tweetModel)

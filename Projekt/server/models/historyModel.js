@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-let history = new Schema({
+let historyModel = new Schema({
         searches: {
             type: [Schema.Types.ObjectId],
             ref: 'Search',
@@ -19,4 +19,4 @@ let history = new Schema({
     }
 )
 
-module.exports = mongoose.model('History', history)
+module.exports = mongoose.model('History', historyModel)

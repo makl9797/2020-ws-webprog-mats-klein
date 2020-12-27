@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-let tweetList = new Schema({
+let tweetListModel = new Schema({
         tweets: {
             type: [Schema.Types.ObjectId],
             ref: 'Tweet',
@@ -29,4 +29,4 @@ let tweetList = new Schema({
     }
 )
 
-module.exports = mongoose.model('TweetList', tweetList)
+module.exports = mongoose.model('TweetList', tweetListModel)

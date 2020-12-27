@@ -1,4 +1,4 @@
-const Author = require('../models/author')
+const Author = require('../models/authorModel')
 
 exports.create_Author = async function (req, res) {
     const author = new Author({
