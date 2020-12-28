@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 let authorModel = new Schema({
         _id: {
-            type: Number,
+            type: String,
             required: true
         },
         name: {

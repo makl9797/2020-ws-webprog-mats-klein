@@ -10,8 +10,8 @@ exports.get_Author = async (req, res) => {
 }
 
 exports.create_Author = async (req, res, next) => {
-    await req.author.forEach(author => async function () {
-        await new Author({
+    await req.author.forEach(author => {
+        new Author({
             _id: author.id,
             name: author.name,
             username: author.username

@@ -10,8 +10,7 @@ exports.get_Media = async (req, res) => {
 }
 
 exports.create_Media = async (req, res, next) => {
-    console.log(req.media)
-    await req.media.forEach(media => function () {
+    await req.media.forEach(media => {
         new Media({
             _id: media.media_key,
             media_type: media.type,

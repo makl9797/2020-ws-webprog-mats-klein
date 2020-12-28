@@ -23,6 +23,7 @@ exports.list = async (req, res) => {
         keyword: req.query.key,
         search_type: "KEYWORD"
     })
+
     try{
         await tweetList.save()
         next()

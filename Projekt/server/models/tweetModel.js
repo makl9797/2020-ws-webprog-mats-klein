@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-
 const Schema = mongoose.Schema
 
 let tweetModel = new Schema({
@@ -18,11 +17,13 @@ let tweetModel = new Schema({
         author: {
             type: String,
             ref: 'Author',
-            required: true
+            required: true,
+            autopopulate: true
         },
         media: {
-            type: String,
-            ref: 'Media'
+            type: [String],
+            ref: 'Media',
+            autopopulate: true
         }
     },
     {
@@ -30,5 +31,6 @@ let tweetModel = new Schema({
     }
 )
 
+tweetModel.plugin(require('mongoose-autopopulate'))
 
 module.exports = mongoose.model('Tweet', tweetModel)

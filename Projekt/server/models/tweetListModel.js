@@ -6,7 +6,8 @@ let tweetListModel = new Schema({
         tweets: {
             type: [String],
             ref: 'Tweet',
-            required: true
+            required: true,
+            autopopulate: true
         },
         histories: {
             type: [Schema.Types.ObjectId],
@@ -27,5 +28,7 @@ let tweetListModel = new Schema({
         collection: 'TweetList'
     }
 )
+
+tweetListModel.plugin(require('mongoose-autopopulate'))
 
 module.exports = mongoose.model('TweetList', tweetListModel)
