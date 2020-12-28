@@ -3,6 +3,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 let userModel = new Schema({
+        _id: {
+            type: Number,
+            required: true
+        },
         history: {
             type: Schema.Types.ObjectId,
             ref: 'History',

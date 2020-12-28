@@ -4,14 +4,13 @@ const Schema = mongoose.Schema
 
 let tweetListModel = new Schema({
         tweets: {
-            type: [Schema.Types.ObjectId],
+            type: [String],
             ref: 'Tweet',
             required: true
         },
         histories: {
             type: [Schema.Types.ObjectId],
             ref: 'History',
-            required: true
         },
         keyword: {
             type:String,

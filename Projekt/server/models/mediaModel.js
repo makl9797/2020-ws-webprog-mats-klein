@@ -3,14 +3,17 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 let mediaModel = new Schema({
+        _id: {
+            type: String,
+            required: true
+        },
         media_type: {
             type: String,
-            enum: ['IMAGE', 'GIF', 'VIDEO'],
+            enum: ['photo', 'animated_gif', 'video'],
             required: true
         },
         url: {
             type: String,
-            required: true
         },
         preview_url: String
     },

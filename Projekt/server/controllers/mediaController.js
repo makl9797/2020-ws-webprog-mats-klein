@@ -9,16 +9,15 @@ exports.get_Media = async (req, res) => {
     }
 }
 
-exports.create_Media = async (req, res) => {
-    const media = new Media({
-        media_type: req.params.media_type,
-        url: req.body.url,
-        preview_url: req.body.preview_url
+exports.create_Media = async (req, res, next) => {
+    console.log(req.media)
+    await req.media.forEach(media => function () {
+        new Media({
+            _id: media.media_key,
+            media_type: media.type,
+            url: media.url,
+            preview_url: media.previw_image_url
+        }).save()
     })
-    try{
-        const savedMedia = await media.save()
-        res.json(savedMedia)
-    }catch (err){
-        res.json({"message": err})
-    }
+    next()
 }

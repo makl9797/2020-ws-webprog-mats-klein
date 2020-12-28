@@ -3,6 +3,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 let tweetModel = new Schema({
+        _id: {
+            type: String,
+            required: true
+        },
         message: {
             type: String,
             required: true
@@ -19,11 +23,6 @@ let tweetModel = new Schema({
         media: {
             type: String,
             ref: 'Media'
-        },
-        tweetLists: {
-            type: String,
-            ref: 'Tweet',
-            required: true
         }
     },
     {

@@ -9,20 +9,17 @@ exports.get_Tweet = async (req, res) => {
     }
 }
 
-exports.create_Tweet = async (req, res) => {
-    const tweet = new Tweet({
-        message: req.body.message,
-        created_at: req.body.created_at,
-        author: req.body.author,
-        media: req.body.media,
-        tweetLists: req.body.tweetLists
+exports.create_Tweet = async (req, res, next) => {
+    await req.tweet.forEach(tweet => async function () {
+        await new Tweet({
+            _id: tweet.id,
+            message: tweet.text,
+            created_at: tweet.created_at,
+            author: tweet.author_id,
+            media: tweet.attachments.media_keys[0]
+        }).save()
     })
-    try {
-        const savedTweet = await tweet.save()
-        res.json(savedTweet)
-    } catch (err) {
-        res.json({"message": err})
-    }
+    next()
 }
 
 

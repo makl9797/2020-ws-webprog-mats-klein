@@ -1,9 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const tweetList_Controller = require('../controllers/tweetListController')
+const APTweet = require('../middlewares/APTweet')
+const tweetListController = require('../controllers/tweetListController')
+const tweetRouter = require('./tweetRouter')
 
-router.get('/lists', tweetList_Controller.list )
-router.post('/lists', tweetList_Controller.create_List)
+router.use(APTweet.requestSetup)
+router.use(APTweet.recentSearch)
+router.use(APTweet.typeSorter)
+router.use(tweetRouter)
+router.use(tweetListController.create_List)
+
+
+router.get('/lists', tweetListController.list )
 
 module.exports = router
