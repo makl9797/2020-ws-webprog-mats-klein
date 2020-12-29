@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 let mediaModel = new Schema({
         _id: {
             type: String,
-            required: true
+            required: true,
         },
         media_type: {
             type: String,

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 let tweetModel = new Schema({
         _id: {
             type: String,
-            required: true
+            required: true,
         },
         message: {
             type: String,

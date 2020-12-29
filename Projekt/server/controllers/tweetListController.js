@@ -3,13 +3,13 @@ const TweetList = require('../models/tweetListModel')
 
 exports.hasRecentEntry = async (req, res, next) => {
     const list = await TweetList.findOne({keyword: req.query.key})
-    if (list  == null) next()
+    if (list == null) next()
     else {
-        if (new Date() -  list .updatedAt > 30000) { // 300000ms = 5min
+        if (new Date() - list.updatedAt > 30000) { // 300000ms = 5min
             req.update = true
             next()
-        }else{
-            res.json( list )
+        } else {
+            res.json(list)
         }
     }
 }
@@ -17,7 +17,7 @@ exports.hasRecentEntry = async (req, res, next) => {
 exports.createOrUpdate = async (req, res, next) => {
     if (req.update) {
         this.updateByKey(req, res, next)
-    }else {
+    } else {
         this.createByKey(req, res, next)
     }
 }
@@ -26,9 +26,10 @@ exports.updateByKey = async (req, res, next) => {
     const list = await TweetList.findOne({keyword: req.query.key})
     const tweetList = req.newTweets
     list.tweets.forEach(tweet => {
-        tweetList.push(tweet.id)
+        if (!tweetList.includes(tweet.id)) {
+            tweetList.push(tweet.id)
+        }
     })
-    console.log(tweetList)
     try {
         await TweetList.updateOne({keyword: req.query.key}, {
             tweets: tweetList
