@@ -8,7 +8,7 @@ const tweetRouter = require('./tweetRouter')
 router.use(tweetListController.hasRecentEntry)
 router.use(APTweet)
 router.use(tweetRouter)
-router.use(tweetListController.createByKey)
+router.use(tweetListController.createOrUpdate)
 
 
 router.get('/list', tweetListController.listByKey)

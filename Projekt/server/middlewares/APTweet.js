@@ -12,6 +12,7 @@ const requestSetup = async (req, res, next) => {
         headers: header,
         redirect: 'follow'
     }
+    console.log("APTweet: requestSetup executed")
     next()
 }
 
@@ -21,13 +22,15 @@ const recentSearch = async (req, res, next) => {
         .then(response => response.json())
         .then(result => req.APTweetRaw = result)
         .catch(error => console.log('error', error))
+    console.log("APTweet: recentSearch executed")
     next()
 }
 
 const typeSorter = async (req, res, next) => {
     req.author = req.APTweetRaw.includes.users
-    req.media = req.APTweetRaw.includes.media
+    req.media = req.APTweetRaw.includes.media || "no media"
     req.tweet = req.APTweetRaw.data
+    console.log("APTweet: typeSorter executed")
     next()
 }
 

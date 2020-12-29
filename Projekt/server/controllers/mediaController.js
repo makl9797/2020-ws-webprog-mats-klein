@@ -7,16 +7,21 @@ exports.get_Media = async (req, res) => {
     }catch (err){
         res.json({"message": err})
     }
+    console.log("mediaController: get_Media executed")
 }
 
 exports.create_Media = async (req, res, next) => {
-    await req.media.forEach(media => {
-        new Media({
-            _id: media.media_key,
-            media_type: media.type,
-            url: media.url,
-            preview_url: media.previw_image_url
-        }).save()
-    })
+    if (req.media.equals("no media")){
+        await req.media.forEach(media => {
+            const media_key = media.media_key || ""
+            new Media({
+                _id: media_key,
+                media_type: media.type,
+                url: media.url,
+                preview_url: media.previw_image_url
+            }).save()
+        })
+    }
+    console.log("mediaController: create_Media executed")
     next()
 }
