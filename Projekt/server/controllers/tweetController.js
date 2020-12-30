@@ -15,7 +15,6 @@ exports.create_Tweet = async (req, res, next) => {
         req.newTweets.push(tweet.id)
         const attachments = tweet.attachments || ""
         Tweet.exists({_id: tweet.id}).then(exists => {
-            console.log(exists)
             if (!exists) {
                 new Tweet({
                     _id: tweet.id,
@@ -24,7 +23,6 @@ exports.create_Tweet = async (req, res, next) => {
                     author: tweet.author_id,
                     media: attachments.media_keys
                 }).save()
-                console.log(`tweetController: Tweet with id:${tweet.id} saved in Database`)
             }
         })
     })

@@ -1,22 +1,32 @@
 <template>
   <v-text-field
+    v-model="key"
+    v-on:click="test"
     dense
     outlined
     hide-details
     label="Suche nach Tweets..."
     append-icon="mdi-magnify"
-    class="align-self-center text--black red_det"
+    class="align-self-center text--black white"
   />
 </template>
 
 <script>
 export default {
-  name: 'TheSearchBar'
+  name: 'TheSearchBar',
+  methods: {
+    test: function (event) {
+      console.log(this.data.key)
+      // this.$emit('keydown.enter', this.data.key)
+    }
+  },
+  data () {
+    return {
+      key: ''
+    }
+  }
 }
 </script>
 
 <style scoped>
-.red_det{
-  background: #c4fc76;
-}
 </style>
