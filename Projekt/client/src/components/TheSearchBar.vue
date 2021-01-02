@@ -1,7 +1,5 @@
 <template>
   <v-text-field
-    v-model="key"
-    v-on:click="test"
     dense
     outlined
     hide-details
@@ -13,18 +11,7 @@
 
 <script>
 export default {
-  name: 'TheSearchBar',
-  methods: {
-    test: function (event) {
-      console.log(this.data.key)
-      // this.$emit('keydown.enter', this.data.key)
-    }
-  },
-  data () {
-    return {
-      key: ''
-    }
-  }
+  name: 'TheSearchBar'
 }
 </script>
 
