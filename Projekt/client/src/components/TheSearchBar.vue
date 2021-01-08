@@ -1,5 +1,6 @@
 <template>
   <v-text-field
+    @click="testStore"
     dense
     outlined
     hide-details
@@ -10,8 +11,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'TheSearchBar'
+  name: 'TheSearchBar',
+  computed:
+    mapState(['tweetlist']),
+  methods: {
+    testStore: () => {
+      this.$store.dispatch('FETCH_TWEETS')
+    }
+  }
 }
 </script>
 
