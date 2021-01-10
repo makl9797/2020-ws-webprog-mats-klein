@@ -1,6 +1,7 @@
 <template>
   <v-text-field
-    @click="testStore"
+    @keydown.enter="loadTweets"
+    v-model="keyword"
     dense
     outlined
     hide-details
@@ -11,17 +12,23 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+
+import { mapActions } from 'vuex'
 
 export default {
   name: 'TheSearchBar',
-  computed:
-    mapState(['tweetlist']),
-  methods: {
-    testStore: () => {
-      this.$store.dispatch('FETCH_TWEETS')
+  methods: mapActions(['loadTweets']),
+  computed: {
+    keyword: {
+      get () {
+        return this.$store.state.key
+      },
+      set (key) {
+        this.$store.commit('SET_KEYWORD', key)
+      }
     }
   }
+
 }
 </script>
 

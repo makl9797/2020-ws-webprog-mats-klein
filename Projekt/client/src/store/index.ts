@@ -6,20 +6,24 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    tweetlist: []
+    tweetlist: [],
+    key: ''
   },
   mutations: {
-    SET_TWEETLIST: (state, { tweetlist }) => {
+    SET_TWEETLIST: (state, tweetlist) => {
       state.tweetlist = tweetlist
+    },
+    SET_KEYWORD: (state, key) => {
+      state.key = key
     }
   },
   actions: {
-    FETCH_TWEETS: function ({ commit }) {
-      fetch('http://localhost:9000/search/list?key=trump')
-        .then((response) => {
-          return response.json()
-        }).then((data) => {
-          commit('SET_TWEETLIST', { tweetlist: data })
+    loadTweets ({ commit, state }) {
+      Vue.axios.get(`search/list?key=${state.key}`)
+        .then(result => {
+          commit('SET_TWEETLIST', result.data)
+        }).catch(error => {
+          throw new Error(`API ${error}`)
         })
     }
   },

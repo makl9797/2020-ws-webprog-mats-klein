@@ -10,9 +10,9 @@
           <div
             v-masonry-tile
             class="item"
-            v-for="(data,index) in $options.streamedTweets.stream"
+            v-for="(data,index) in tweetlist.tweets"
             :key="index">
-            <Tweet :streamedTweet="data"></Tweet>
+            <Tweet :recentTweet="data"></Tweet>
           </div>
         </div>
     </div>
@@ -23,6 +23,7 @@
 import Tweet from '@/components/Tweet'
 import recentData from '@/assets/dummy_recent.json'
 import streamData from '@/assets/dummy_stream.json'
+import { mapState } from 'vuex'
 
 export default {
   name: 'TheBody',
@@ -36,7 +37,8 @@ export default {
     onResize: function () {
       this.$redrawVueMasonry()
     }
-  }
+  },
+  computed: mapState(['tweetlist'])
 }
 </script>
 

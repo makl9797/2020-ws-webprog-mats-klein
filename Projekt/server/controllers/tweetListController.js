@@ -5,7 +5,7 @@ exports.hasRecentEntry = async (req, res, next) => {
     const list = await TweetList.findOne({keyword: req.query.key})
     if (list == null) next()
     else {
-        if (new Date() - list.updatedAt > 30000) { // 300000ms = 5min
+        if (new Date() - list.updatedAt > 300000) { // 300000ms = 5min
             req.update = true
             next()
         } else {
