@@ -6,7 +6,7 @@
       <v-card
         :elevation="hover ? 8 : 0"
         outlined color="deep-purple lighten-4"
-        @click="toggleOverlay">
+        @click="isClicked = !isClicked">
          <div
             class="fill-height transparent-overlay">
             <v-card-title
@@ -69,9 +69,6 @@ export default {
     }
   },
   methods: {
-    toggleOverlay: function () {
-      this.isClicked = !this.isClicked
-    },
     parseDate: function (date) {
       const year = date.substring(0, 4)
       const month = date.substring(5, 7)

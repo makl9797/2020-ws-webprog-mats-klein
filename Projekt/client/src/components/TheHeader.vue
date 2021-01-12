@@ -27,15 +27,17 @@
     <v-spacer></v-spacer>
     <TheSearchBar></TheSearchBar>
     <v-spacer></v-spacer>
+    <TheLoginForm></TheLoginForm>
   </v-app-bar>
 </template>
 
 <script>
 import TheSearchBar from '@/components/TheSearchBar'
+import TheLoginForm from '@/components/TheLoginForm'
 
 export default {
   name: 'TheHeader',
-  components: { TheSearchBar }
+  components: { TheLoginForm, TheSearchBar }
 }
 </script>
 

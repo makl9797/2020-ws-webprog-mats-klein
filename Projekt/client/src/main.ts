@@ -18,7 +18,6 @@ Vue.axios.defaults.baseURL = 'http://localhost:9000/'
 // Masonry-Layout
 Vue.use(VueMasonryPlugin)
 
-// Form-Validation (Vee-Validate)
 Vue.component('ValidationProvider', ValidationProvider)
 
 new Vue({
