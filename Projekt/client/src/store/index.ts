@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     tweetlist: [],
-    key: ''
+    key: '',
+    email: ''
   },
   mutations: {
     SET_TWEETLIST: (state, tweetlist) => {
@@ -15,6 +16,10 @@ export default new Vuex.Store({
     },
     SET_KEYWORD: (state, key) => {
       state.key = key
+    },
+    SET_CURRENT_LOGIN: (state, email) => {
+      state.email = email
+      console.log(email)
     }
   },
   actions: {

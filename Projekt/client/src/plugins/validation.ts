@@ -1,5 +1,5 @@
 import { extend } from 'vee-validate'
 
-extend('positive', value => {
+extend('email', value => {
   return value >= 0
 })

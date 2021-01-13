@@ -6,6 +6,8 @@
       <v-card
         :elevation="hover ? 8 : 0"
         outlined color="deep-purple lighten-4"
+        :width="$vuetify.breakpoint.xs ? 600 : 300"
+        min-width="300"
         @click="isClicked = !isClicked">
          <div
             class="fill-height transparent-overlay">

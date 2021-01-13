@@ -27,7 +27,10 @@
     <v-spacer></v-spacer>
     <TheSearchBar></TheSearchBar>
     <v-spacer></v-spacer>
-    <TheLoginForm></TheLoginForm>
+    <div
+    class="align-self-center">
+      <TheLoginForm></TheLoginForm>
+    </div>
   </v-app-bar>
 </template>
 
