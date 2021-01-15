@@ -9,8 +9,8 @@ import { ValidationProvider } from 'vee-validate'
 
 import { Auth0Plugin } from '@/auth'
 
-const domain = require('../auth-config.json').domain
-const clientId = require('../auth-config.json').clientId
+const domain = require('../auth_config.json').domain
+const clientId = require('../auth_config.json').clientId
 
 Vue.use(Auth0Plugin, {
   domain,

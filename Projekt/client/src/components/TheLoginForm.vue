@@ -12,6 +12,12 @@
     >
       Logout
     </v-btn>
+    <v-btn
+      @click="logMail"
+      color="deep-purple darken-1 white--text"
+    >
+      Test
+    </v-btn>
   </div>
 </template>
 
@@ -43,6 +49,9 @@ export default {
       this.auth0.logout({
         returnTo: window.location.origin
       })
+    },
+    logMail () {
+      console.log(this.auth0.user.email)
     }
   }
 }

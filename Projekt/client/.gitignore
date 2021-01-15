@@ -3,7 +3,7 @@ node_modules
 /dist
 
 # config files with sensitve data
-auth-config.json
+auth_config.json
 
 # local env files
 .env.local
