@@ -3,13 +3,14 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 let historyModel = new Schema({
-        searches: {
-            type: [Schema.Types.ObjectId],
-            ref: 'Search',
-            required: true
+        tweetLists: {
+            type: [String],
+            ref: 'twee',
+            required: true,
+            autopopulate: true
         },
         user: {
-            type: Schema.Types.ObjectId,
+            type: String,
             ref: 'User',
             required: true
         }
@@ -18,5 +19,7 @@ let historyModel = new Schema({
         collection: 'History'
     }
 )
+
+historyModel.plugin(require('mongoose-autopopulate'))
 
 module.exports = mongoose.model('History', historyModel)

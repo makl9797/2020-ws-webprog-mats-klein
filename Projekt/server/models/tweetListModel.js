@@ -10,7 +10,7 @@ let tweetListModel = new Schema({
             autopopulate: true
         },
         histories: {
-            type: [Schema.Types.ObjectId],
+            type: [String],
             ref: 'History',
         },
         keyword: {

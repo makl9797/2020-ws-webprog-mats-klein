@@ -1,5 +1,6 @@
 //Quelle 2: Extended Toolbar Wireframe
 <template>
+  <div>
   <v-app-bar
     app
     class="mx-auto"
@@ -32,6 +33,7 @@
       <TheLoginForm></TheLoginForm>
     </div>
   </v-app-bar>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div>{{ history }}</div>
     <v-btn
       v-if="!this.auth0.isAuthenticated" @click="login"
       color="deep-purple darken-1 white--text"
@@ -34,9 +35,15 @@ export default {
       })
     }
   },
-  watch: {
-    $auth: function () {
-      console.log('Test')
+  computed: {
+    history: function () {
+      if (this.auth0.isAuthenticated) {
+        this.$store.commit('SET_USERTOKEN', this.auth0.user.sub)
+        this.$store.dispatch('saveHistory')
+        return `User: ${this.auth0.user.email}`
+      } else {
+        return ''
+      }
     }
   }
 }
