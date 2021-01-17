@@ -1,6 +1,5 @@
 <template>
   <v-tab
-  @click="$store.dispatch('switchTweetlist', tweetListKey)"
   >{{tweetListKey}}</v-tab>
 </template>
 

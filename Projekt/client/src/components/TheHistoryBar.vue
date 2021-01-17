@@ -13,10 +13,10 @@
       <v-btn
         height="auto"
         color="deep-purple darken-1 white--text"
-        @click="addHistory"
-      ><v-icon
-      >mdi-playlist-plus
-      </v-icon></v-btn>
+        @click="addTab"
+      >
+        <v-icon>mdi-playlist-plus</v-icon>
+      </v-btn>
     </v-tabs>
   </v-card>
 </template>
@@ -28,8 +28,8 @@ export default {
   name: 'TheHistoryBar',
   components: { History },
   methods: {
-    addHistory () {
-      this.$store.commit('ADD_HISTORY')
+    addTab () {
+      this.$store.dispatch('saveHistory')
     }
   }
 }

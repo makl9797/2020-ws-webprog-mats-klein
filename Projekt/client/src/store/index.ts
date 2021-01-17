@@ -9,8 +9,9 @@ export default new Vuex.Store({
     tweetlist: [],
     key: '',
     auth: '',
-    userToken: '',
-    histories: ['Twitter']
+    userID: '',
+    histories: ['Example'],
+    historyIds: ['']
   },
   mutations: {
     SET_TWEETLIST: (state, tweetlist) => {
@@ -19,44 +20,31 @@ export default new Vuex.Store({
     SET_KEYWORD: (state, key) => {
       state.key = key
     },
-    SET_USERTOKEN: (state, user) => {
-      state.userToken = user
+    SET_USERID: (state, user) => {
+      state.userID = user.sub
     },
-    SET_HISTORY: (state, history) => {
-      state.histories = history
+    KEY_TO_HISTORY: (state) => {
+      state.histories.push(state.key)
     },
-    ADD_HISTORY: (state) => {
-      if (state.key !== '') {
-        state.histories.push(state.key)
-      }
+    ID_TO_HISTORYID: (state, id) => {
+      console.log(id)
+      state.historyIds.push(id)
     }
   },
   actions: {
     loadTweets ({ commit, state }) {
-      Vue.axios.get(`search/list?key=${state.key}`)
+      Vue.axios.get(`tweetlist/byKey?key=${state.key}`)
         .then(result => {
           commit('SET_TWEETLIST', result.data)
         }).catch(error => {
           throw new Error(`API ${error}`)
         })
     },
-    loadHistory ({ commit, state }) {
-      Vue.axios.get(`history?from=${state.userToken}`)
-        .then(result => {
-          commit('SET_HISTORY', result.data)
-        }).catch(error => {
-          throw new Error(`API ${error}`)
-        })
-    },
-    saveHistory ({ state }) {
-      Vue.axios.post(`history?from=${state.userToken}`, state.histories)
-    },
-    switchTweetlist ({ commit, state }, key) {
-      commit('SET_KEYWORD', key)
-      Vue.axios.get(`search/list?key=${key}`)
-        .then(result => {
-          commit('SET_TWEETLIST', result.data)
-        })
+    saveHistory ({ commit, dispatch, state }) {
+      commit('KEY_TO_HISTORY')
+      dispatch('loadTweets')
+      commit('ID_TO_HISTORYID', state.tweetlist._id)
+      Vue.axios.post(`history?user=${state.userID}`, state.historyIds).then(r => console.log(r.data))
     }
   },
   modules: {}
