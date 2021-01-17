@@ -11,14 +11,22 @@ exports.get_History = async (req, res) => {
 }
 
 exports.create_History = async (req, res) => {
-   try {
-        await new History({
-            _id: req.query.user,
-            tweetLists: req.body
-        }).save()
-       res.json({"message": `History for User ${req.query.user} saved`})
+    try {
+
+        res.json(await History.exists({_id: req.query.user}).then(exists => {
+            if (exists) {
+                History.updateOne({_id: req.query.user}, {
+                    tweetLists: req.body
+                })
+            } else {
+                new History({
+                    _id: req.query.user,
+                    tweetLists: req.body
+                }).save()
+            }
+        }))
     } catch (err) {
-        res.json({"message": `Error: ${err}`})
+        res.json({"message": err})
     }
     console.log("historyController: create_History executed")
 }
