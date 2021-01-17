@@ -3,16 +3,15 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 let historyModel = new Schema({
+        _id: {
+            type: String,
+            required: true
+        },
         tweetLists: {
-            type: [String],
-            ref: 'twee',
+            type: [mongoose.Types.ObjectId],
+            ref: 'TweetList',
             required: true,
             autopopulate: true
-        },
-        user: {
-            type: String,
-            ref: 'User',
-            required: true
         }
     },
     {

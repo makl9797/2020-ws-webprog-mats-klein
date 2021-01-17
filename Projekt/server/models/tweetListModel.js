@@ -9,12 +9,8 @@ let tweetListModel = new Schema({
             required: true,
             autopopulate: true
         },
-        histories: {
-            type: [String],
-            ref: 'History',
-        },
         keyword: {
-            type:String,
+            type: String,
             required: true
         },
         search_type: {

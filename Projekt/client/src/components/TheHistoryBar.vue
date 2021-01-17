@@ -14,7 +14,9 @@
         height="auto"
         color="deep-purple darken-1 white--text"
         @click="addHistory"
-      >+</v-btn>
+      ><v-icon
+      >mdi-playlist-plus
+      </v-icon></v-btn>
     </v-tabs>
   </v-card>
 </template>

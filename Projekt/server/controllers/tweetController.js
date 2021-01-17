@@ -7,6 +7,7 @@ exports.get_Tweet = async (req, res) => {
     } catch (err) {
         res.json({"message": err})
     }
+    console.log("tweetController: get_Tweet executed")
 }
 
 exports.create_Tweet = async (req, res, next) => {

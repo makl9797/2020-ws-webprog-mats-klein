@@ -1,6 +1,5 @@
 const TweetList = require('../models/tweetListModel')
 
-
 exports.hasRecentEntry = async (req, res, next) => {
     const list = await TweetList.findOne({keyword: req.query.key})
     if (list == null) next()
@@ -46,16 +45,24 @@ exports.deleteByKey = async (req, res, next) => {
     next()
 }
 
-exports.listByKey = async (req, res) => {
-    console.log("tweetListController: before listByKey executed")
-    const key = req.query.key
+exports.getListByKey = async (req, res) => {
     try {
-        const tweetList = await TweetList.findOne({keyword: key})
+        const tweetList = await TweetList.findOne({keyword: req.query.key})
         res.json(tweetList)
     } catch (err) {
         res.send(err)
     }
     console.log("tweetListController: listByKey executed")
+}
+
+exports.getListByID = async (req, res) => {
+    try {
+        const tweetList = await TweetList.findById(req.query.id)
+        res.json(tweetList)
+    } catch (err) {
+        res.send(err)
+    }
+    console.log("tweetListController: getListByID executed")
 }
 
 exports.createByKey = async (req, res, next) => {

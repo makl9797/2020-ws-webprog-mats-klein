@@ -9,7 +9,4 @@ router.use(authorRouter)
 router.use(mediaRouter)
 router.use(tweetController.create_Tweet)
 
-router.get('/', tweetController.get_Tweet)
-
-
 module.exports = router

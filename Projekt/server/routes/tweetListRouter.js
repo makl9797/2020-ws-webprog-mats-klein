@@ -5,12 +5,13 @@ const APTweet = require('../middlewares/APTweet')
 const tweetListController = require('../controllers/tweetListController')
 const tweetRouter = require('./tweetRouter')
 
-router.use(tweetListController.hasRecentEntry)
-router.use(APTweet)
-router.use(tweetRouter)
-router.use(tweetListController.createOrUpdate)
+router.use('/byKey', tweetListController.hasRecentEntry)
+router.use('/byKey', APTweet)
+router.use('/byKey', tweetRouter)
+router.use('/byKey', tweetListController.createOrUpdate)
 
+router.get('/byKey',tweetListController.getListByKey)
 
-router.get('/list', tweetListController.listByKey)
+router.get('/byID', tweetListController.getListByID)
 
 module.exports = router

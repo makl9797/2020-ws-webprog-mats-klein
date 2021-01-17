@@ -28,7 +28,7 @@ APP.use(express.json())
 APP.use(express.static(__dirname + '/views/'))
 
 // Defining route middleware
-APP.use('/search', tweets)
+APP.use('/tweetlist', tweets)
 APP.use('/history', history)
 
 // Listening to port
