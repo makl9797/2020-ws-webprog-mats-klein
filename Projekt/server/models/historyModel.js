@@ -11,7 +11,11 @@ let historyModel = new Schema({
             type: [mongoose.Types.ObjectId],
             ref: 'TweetList',
             required: true,
-            autopopulate: true
+            autopopulate: false
+        },
+        keywords: {
+            type: [String],
+            required: true
         }
     },
     {

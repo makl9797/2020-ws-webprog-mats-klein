@@ -6,7 +6,7 @@
       dark
     >
         <History
-          v-for="(history,index) in $store.state.histories"
+          v-for="(history,index) in $store.state.histories.names"
           :key="index"
           :tweet-list-key="history">
         </History>

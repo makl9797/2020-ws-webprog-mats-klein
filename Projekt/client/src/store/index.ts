@@ -12,8 +12,10 @@ export default new Vuex.Store({
     key: '',
     auth: '',
     userID: '',
-    histories: ['Example'],
-    historyIds: ['Empty'] // TODO Empty Listen klappen nicht
+    histories: {
+      ids: [],
+      names: []
+    }
   },
   mutations: {
     SET_TWEETLIST: (state, tweetlist) => {
@@ -29,35 +31,43 @@ export default new Vuex.Store({
       state.userID = user.sub
     },
     KEY_TO_HISTORY: (state) => {
-      state.histories.push(state.key)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      state.histories.names.push(state.key)
     },
     ID_TO_HISTORYID: (state) => {
-      if (state.historyIds[0] === 'Empty') {
-        console.log('Was Empty')
-        console.log(state.historyIds)
-        state.historyIds = [state.tweetlistId]
-        console.log(state.historyIds)
-      } else {
-        state.historyIds.push(state.tweetlistId)
-      }
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // @ts-ignore
+      state.histories.ids.push(state.tweetlistId)
+    },
+    LOAD_HISTORY: (state, history) => {
+      state.histories.ids = history.tweetLists
+      state.histories.names = history.keywords
     }
   },
   actions: {
     loadTweets ({ commit, state }) {
       Vue.axios.get(`tweetlist/byKey?key=${state.key}`)
         .then(result => {
-          console.log(result.data)
           commit('SET_TWEETLIST', result.data)
           commit('SET_TWEETLISTID', result.data._id)
         }).catch(error => {
           throw new Error(`API ${error}`)
         })
     },
-    saveHistory ({ commit, dispatch, state }) {
+    async saveHistory ({ commit, dispatch, state }) {
       commit('KEY_TO_HISTORY')
-      dispatch('loadTweets')
+      await dispatch('loadTweets')
       commit('ID_TO_HISTORYID')
-      Vue.axios.post(`history?user=${state.userID}`, state.historyIds).then(r => console.log(r.data))
+      Vue.axios.post(`history?user=${state.userID}`, state.histories).then(r => console.log(r.data))
+    },
+    loadHistory ({ state, commit }) {
+      Vue.axios.get(`history?user=${state.userID}`)
+        .then(result => {
+          commit('LOAD_HISTORY', result)
+        }).catch(error => {
+          throw new Error(`API ${error}`)
+        })
     }
   },
   modules: {}
