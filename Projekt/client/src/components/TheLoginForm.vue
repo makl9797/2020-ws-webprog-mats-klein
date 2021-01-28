@@ -12,7 +12,8 @@
     >
       Logout
     </v-btn>
-    <div>{{userMail}}</div>
+    <div
+    v-if="this.$auth.isAuthenticated">{{userMail}}</div>
   </div>
 </template>
 
@@ -38,6 +39,11 @@ export default {
     userMail: function () {
       this.$store.commit('SET_USERID', this.$auth.user)
       return this.$auth.user.email
+    }
+  },
+  updated () {
+    if (this.$auth.isAuthenticated) {
+      this.$store.dispatch('loadHistory')
     }
   }
 }

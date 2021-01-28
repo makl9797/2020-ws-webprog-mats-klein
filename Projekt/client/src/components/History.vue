@@ -1,5 +1,6 @@
 <template>
   <v-tab
+    @click="loadList"
   >{{tweetListKey}}</v-tab>
 </template>
 
@@ -10,6 +11,11 @@ export default {
     tweetListKey: {
       type: String,
       required: true
+    }
+  },
+  methods: {
+    loadList () {
+      this.$store.dispatch('loadTweets')
     }
   }
 }

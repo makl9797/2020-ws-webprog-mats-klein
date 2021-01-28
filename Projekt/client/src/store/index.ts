@@ -41,8 +41,8 @@ export default new Vuex.Store({
       state.histories.ids.push(state.tweetlistId)
     },
     LOAD_HISTORY: (state, history) => {
-      state.histories.ids = history.tweetLists
-      state.histories.names = history.keywords
+      state.histories.ids = history.data.tweetLists
+      state.histories.names = history.data.keywords
     }
   },
   actions: {
@@ -61,13 +61,17 @@ export default new Vuex.Store({
       commit('ID_TO_HISTORYID')
       Vue.axios.post(`history?user=${state.userID}`, state.histories).then(r => console.log(r.data))
     },
-    loadHistory ({ state, commit }) {
-      Vue.axios.get(`history?user=${state.userID}`)
-        .then(result => {
-          commit('LOAD_HISTORY', result)
-        }).catch(error => {
-          throw new Error(`API ${error}`)
-        })
+    async loadHistory ({ state, commit }) {
+      if (state.userID != null) {
+        await Vue.axios.get(`history?user=${state.userID}`)
+          .then(async result => {
+            if (result.data != null) {
+              await commit('LOAD_HISTORY', result)
+            }
+          }).catch(error => {
+            throw new Error(`API ${error}`)
+          })
+      }
     }
   },
   modules: {}
