@@ -1,5 +1,9 @@
 <template>
   <div>
+    <v-row>
+    <div
+      v-if="$vuetify.breakpoint.mobile ? false : this.$auth.isAuthenticated "
+    class="mr-5">{{userMail}}</div>
     <v-btn
       v-if="!this.$auth.isAuthenticated" @click="login"
       color="deep-purple darken-1 white--text"
@@ -12,8 +16,7 @@
     >
       Logout
     </v-btn>
-    <div
-    v-if="this.$auth.isAuthenticated">{{userMail}}</div>
+    </v-row>
   </div>
 </template>
 
@@ -21,10 +24,6 @@
 
 export default {
   name: 'TheLoginForm',
-  data () {
-    return {
-    }
-  },
   methods: {
     login () {
       this.$auth.loginWithRedirect()

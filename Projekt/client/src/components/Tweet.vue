@@ -6,8 +6,7 @@
       <v-card
         :elevation="hover ? 8 : 0"
         outlined color="deep-purple lighten-4"
-        :width="$vuetify.breakpoint.xs ? 600 : 300"
-        min-width="300"
+        :width="tweetWidth"
         @click="isClicked = !isClicked">
          <div
             class="fill-height transparent-overlay">
@@ -62,6 +61,7 @@ export default {
   data () {
     return {
       isClicked: false,
+      tweetWidth: 300,
       images: {
         altImg: {
           src: 'https://2.bp.blogspot.com/-F3_7KEgYfnQ/Wk3lernyFiI/AAAAAAAAkr8/WIfx1yUUQnU3BVdHiVktXXYMtfJ30JjWACLcBGAs/s1600/48bc1ae88f43aa9845403d378ecdb830--wedding-hashtag-generator-being-used.jpg',

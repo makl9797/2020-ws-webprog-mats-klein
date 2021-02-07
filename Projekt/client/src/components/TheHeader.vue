@@ -20,8 +20,8 @@
       class="align-self-center">
       <v-img
         src="@/assets/pound-box.svg"
-        max-width="100"
-        min-width="50"
+        max-width="150"
+        min-width="70"
       >
       </v-img>
     </v-toolbar-title>

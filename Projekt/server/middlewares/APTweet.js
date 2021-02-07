@@ -18,7 +18,7 @@ const requestSetup = async (req, res, next) => {
 
 const recentSearch = async (req, res, next) => {
     const keyword = req.query.key
-    await fetch(`https://api.twitter.com/2/tweets/search/recent?query=${keyword}&tweet.fields=created_at&expansions=attachments.media_keys,author_id&media.fields=url`, req.APTweetOpt)
+    await fetch(`https://api.twitter.com/2/tweets/search/recent?query=${keyword}&max_results=50&tweet.fields=created_at&expansions=attachments.media_keys,author_id&media.fields=url`, req.APTweetOpt)
         .then(response => response.json())
         .then(result => req.APTweetRaw = result)
         .catch(error => console.log('error', error))

@@ -36,6 +36,9 @@ export default {
   mounted () {
     this.$redrawVueMasonry()
   },
+  updated () {
+    this.$redrawVueMasonry()
+  },
   methods: {
     onResize: function () {
       this.$redrawVueMasonry()
