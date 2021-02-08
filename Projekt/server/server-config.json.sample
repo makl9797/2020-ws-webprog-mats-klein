@@ -1,10 +1,8 @@
 {
     "mongodb":{
-        "username": "",
-        "password": "",
-        "uri": "mongodb://localhost:27017/tweets`"
+        "uri": "mongodb+srv://<username>:<password>@<clustername>.fyy1z.mongodb.net/"
     },
     "bearer": {
-        "token": "{Bearer Token}"  // usually starts with Bearer AAA...
+        "token": "{Bearer Token for Twitter-API}"
     }
 }

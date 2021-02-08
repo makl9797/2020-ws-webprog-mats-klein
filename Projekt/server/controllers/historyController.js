@@ -7,7 +7,6 @@ exports.get_History = async (req, res) => {
     } catch (err) {
         res.json({"message": err})
     }
-    console.log("historyController: get_History executed")
 }
 
 exports.create_History = async (req, res) => {
@@ -30,5 +29,4 @@ exports.create_History = async (req, res) => {
     } catch (err) {
         res.json({"message": err})
     }
-    console.log("historyController: create_History executed")
 }

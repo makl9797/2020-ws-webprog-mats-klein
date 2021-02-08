@@ -12,11 +12,6 @@ let tweetListModel = new Schema({
         keyword: {
             type: String,
             required: true
-        },
-        search_type: {
-            type: String,
-            enum: ['HASHTAG', 'KEYWORD', 'PROFILE'],
-            required: true
         }
     },
     {

@@ -1,21 +1,22 @@
 <template>
   <div>
     <v-row>
-    <div
-      v-if="$vuetify.breakpoint.mobile ? false : this.$auth.isAuthenticated "
-    class="mr-5">{{userMail}}</div>
-    <v-btn
-      v-if="!this.$auth.isAuthenticated" @click="login"
-      color="deep-purple darken-1 white--text"
-    >
-      Login
-    </v-btn>
-    <v-btn
-      v-if="this.$auth.isAuthenticated" @click="logout"
-      color="deep-purple darken-1 white--text"
-    >
-      Logout
-    </v-btn>
+      <div
+        v-if="$vuetify.breakpoint.mobile ? false : this.$auth.isAuthenticated "
+        class="mr-5">{{ userMail }}
+      </div>
+      <v-btn
+        v-if="!this.$auth.isAuthenticated" @click="login"
+        color="deep-purple darken-1 white--text"
+        :class="$vuetify.breakpoint.mobile ? 'mr-2' : 'mr-8'"
+        :width="$vuetify.breakpoint.mobile ? 50 : 100"
+      >
+        Login
+      </v-btn>
+      <v-icon
+        v-if="this.$auth.isAuthenticated" @click="logout" color="deep-purple darken-4" large class="mr-4">
+        mdi-logout-variant
+      </v-icon>
     </v-row>
   </div>
 </template>

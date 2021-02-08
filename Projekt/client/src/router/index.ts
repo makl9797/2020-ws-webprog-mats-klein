@@ -10,16 +10,6 @@ const routes: Array<RouteConfig> = [
     name: 'home',
     path: '/',
     component: Home
-  },
-  {
-    name: 'search',
-    path: '/search',
-    component: Home
-  },
-  {
-    name: 'stream',
-    path: '/stream',
-    component: Home
   }
 ]
 

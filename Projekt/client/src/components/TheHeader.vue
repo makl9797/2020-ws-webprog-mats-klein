@@ -1,38 +1,39 @@
 //Quelle 2: Extended Toolbar Wireframe
 <template>
   <div>
-  <v-app-bar
-    app
-    class="mx-auto"
-    shrink-on-scroll
-    src="https://images.pexels.com/photos/3742709/pexels-photo-3742709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-  >
-    <template v-slot:img="{ props }">
-      <v-img
-        v-bind="props"
-        height="400"
-      >
-        <div
-          class="fill-height circle-gradient"></div>
-      </v-img>
-    </template>
-    <v-toolbar-title
-      class="align-self-center">
-      <v-img
-        src="@/assets/pound-box.svg"
-        max-width="150"
-        min-width="70"
-      >
-      </v-img>
-    </v-toolbar-title>
-    <v-spacer></v-spacer>
-    <TheSearchBar></TheSearchBar>
-    <v-spacer></v-spacer>
-    <div
-    class="align-self-center">
-      <TheLoginForm></TheLoginForm>
-    </div>
-  </v-app-bar>
+    <v-app-bar
+      app
+      class="mx-auto"
+      shrink-on-scroll
+      src="https://images.pexels.com/photos/3742709/pexels-photo-3742709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    >
+      <template v-slot:img="{ props }">
+        <v-img
+          v-bind="props"
+          height="400"
+        >
+          <div
+            class="fill-height circle-gradient"></div>
+        </v-img>
+      </template>
+      <v-toolbar-title
+        class="align-self-center">
+        <v-img
+          v-if="!$vuetify.breakpoint.mobile"
+          src="@/assets/pound-box.svg"
+          max-width="150"
+          min-width="70"
+        >
+        </v-img>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <TheSearchBar></TheSearchBar>
+      <v-spacer></v-spacer>
+      <div
+        class="align-self-center">
+        <TheLoginForm></TheLoginForm>
+      </div>
+    </v-app-bar>
   </div>
 </template>
 

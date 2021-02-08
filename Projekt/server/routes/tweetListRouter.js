@@ -10,7 +10,7 @@ router.use('/byKey', APTweet)
 router.use('/byKey', tweetRouter)
 router.use('/byKey', tweetListController.createOrUpdate)
 
-router.get('/byKey',tweetListController.getListByKey)
+router.get('/byKey', tweetListController.getListByKey)
 
 router.get('/byID', tweetListController.getListByID)
 

@@ -7,7 +7,6 @@ exports.get_Author = async (req, res) => {
     } catch (err) {
         res.json({"message": err})
     }
-    console.log("authorController: get_Author executed")
 }
 
 exports.create_Author = async (req, res, next) => {
@@ -22,6 +21,5 @@ exports.create_Author = async (req, res, next) => {
             }
         })
     })
-    console.log("authorController: create_Author executed")
     next()
 }

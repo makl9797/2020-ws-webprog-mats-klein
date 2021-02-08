@@ -6,12 +6,12 @@
       dark
       v-model="activeTab"
     >
-        <History
-          v-for="(history,index) in $store.state.histories.names"
-          :key="index"
-          :tweet-list-key="history"
-          :delete-mode="deleteMode">
-        </History>
+      <History
+        v-for="(history,index) in $store.state.histories.names"
+        :key="index"
+        :tweet-list-key="history"
+        :delete-mode="deleteMode">
+      </History>
       <v-btn
         height="auto"
         color="deep-purple darken-1 white--text"
@@ -20,10 +20,10 @@
         <v-icon>mdi-playlist-plus</v-icon>
       </v-btn>
       <v-switch
-      class="align-self-center ml-auto mr-8"
-      v-model="deleteMode"
-      color="error"
-      label="Löschen"></v-switch>
+        class="align-self-center ml-auto mr-8"
+        v-model="deleteMode"
+        color="error"
+        label="Löschen"></v-switch>
     </v-tabs>
   </v-card>
 </template>

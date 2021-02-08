@@ -1,5 +1,5 @@
 <template>
-<Home></Home>
+  <Home></Home>
 </template>
 
 <script lang="ts">
@@ -11,17 +11,12 @@ export default Vue.extend({
 
   components: {
     Home
-
-  },
-
-  data: () => ({
-    //
-  })
+  }
 })
 </script>
 
 <style lang="scss">
-body{
+body {
   font-family: "Roboto", sans-serif;
 }
 </style>

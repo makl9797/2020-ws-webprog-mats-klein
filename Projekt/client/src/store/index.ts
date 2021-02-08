@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-// https://rathes.me/blog/de/vuex-einstieg/
 
 export default new Vuex.Store({
   strict: true,
@@ -60,7 +59,9 @@ export default new Vuex.Store({
         })
     },
     async saveHistory ({ state }) {
-      await Vue.axios.post(`history?user=${state.userID}`, state.histories).then(result => { console.log('Saved History') })
+      await Vue.axios.post(`history?user=${state.userID}`, state.histories).then(result => {
+        console.log(`saved History: ${result}`)
+      })
     },
     async loadHistory ({ state, commit }) {
       if (state.userID != null) {

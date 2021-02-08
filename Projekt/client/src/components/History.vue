@@ -1,11 +1,12 @@
 <template>
   <v-tab
     @click="loadList"
-  >{{tweetListKey}}
+  >{{ tweetListKey }}
     <v-icon
       v-if="deleteMode"
       class="ml-1"
-    @click="deleteListItem">mdi-delete</v-icon>
+      @click="deleteListItem">mdi-delete
+    </v-icon>
   </v-tab>
 </template>
 

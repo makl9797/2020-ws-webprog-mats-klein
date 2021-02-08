@@ -5,7 +5,6 @@ import vuetify from './plugins/vuetify'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import { ValidationProvider } from 'vee-validate'
 
 import { Auth0Plugin } from '@/auth'
 
@@ -34,8 +33,6 @@ Vue.axios.defaults.baseURL = 'http://localhost:9000/'
 
 // Masonry-Layout
 Vue.use(VueMasonryPlugin)
-
-Vue.component('ValidationProvider', ValidationProvider)
 
 new Vue({
   router,

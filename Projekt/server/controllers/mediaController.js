@@ -7,7 +7,6 @@ exports.get_Media = async (req, res) => {
     } catch (err) {
         res.json({"message": err})
     }
-    console.log("mediaController: get_Media executed")
 }
 
 exports.create_Media = async (req, res, next) => {
@@ -26,6 +25,5 @@ exports.create_Media = async (req, res, next) => {
             })
         })
     }
-    console.log("mediaController: create_Media executed")
     next()
 }

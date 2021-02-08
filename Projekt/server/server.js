@@ -7,9 +7,13 @@ const mongoose = require('mongoose')
 const settings = require('./server-config.json')
 
 // connect to database
-mongoose.connect(settings.mongodb.uri, { useUnifiedTopology: true, useNewUrlParser:true}).then(
-    () => {console.log('Connected to DataBase') },
-    err => { console.log('Can not connect to the database'+ err)}
+mongoose.connect(settings.mongodb.uri, {useUnifiedTopology: true, useNewUrlParser: true}).then(
+    () => {
+        console.log('Connected to DataBase')
+    },
+    err => {
+        console.log('Can not connect to the database' + err)
+    }
 )
 
 // parse env variables

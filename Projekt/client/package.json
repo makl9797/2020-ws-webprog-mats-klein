@@ -11,7 +11,6 @@
     "@auth0/auth0-spa-js": "^1.13.6",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
-    "vee-validate": "^3.4.5",
     "vue": "^2.6.11",
     "vue-axios": "^3.2.2",
     "vue-class-component": "^7.2.3",

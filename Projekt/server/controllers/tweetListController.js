@@ -36,12 +36,6 @@ exports.updateByKey = async (req, res, next) => {
     } catch (err) {
         res.json({message: err})
     }
-    console.log("tweetListController: updateByKey executed")
-    next()
-}
-
-exports.deleteByKey = async (req, res, next) => {
-    // TODO delete list by Keyword
     next()
 }
 
@@ -52,7 +46,6 @@ exports.getListByKey = async (req, res) => {
     } catch (err) {
         res.send(err)
     }
-    console.log("tweetListController: listByKey executed")
 }
 
 exports.getListByID = async (req, res) => {
@@ -62,7 +55,6 @@ exports.getListByID = async (req, res) => {
     } catch (err) {
         res.send(err)
     }
-    console.log("tweetListController: getListByID executed")
 }
 
 exports.createByKey = async (req, res, next) => {
@@ -73,14 +65,12 @@ exports.createByKey = async (req, res, next) => {
     try {
         await new TweetList({
             tweets: tweetList,
-            keyword: req.query.key,
-            search_type: "KEYWORD"
+            keyword: req.query.key
         }).save()
         next()
     } catch (err) {
         res.json({message: err})
     }
-    console.log("tweetListController: createByKey executed")
 }
 
 
