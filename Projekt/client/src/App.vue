@@ -17,6 +17,6 @@ export default Vue.extend({
 
 <style lang="scss">
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif
 }
 </style>

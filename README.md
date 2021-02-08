@@ -4,25 +4,32 @@ Matrikelnummer: 630302
 
 E-Mail: mats.klein@stud.hs-flensburg.de
 
+Quellen:
+
 Quelle 1:
-https://www.mediaevent.de/javascript/json-fetch.html
-'JSON aus Datei einlesen' abgeändert
+In Datei : 2020-WS-WebProg-Mats-Klein\Projekt\client\public\index.html
+Font und Icon Link hinzugefügt
+Font-Autor: Google
+Font-Adresse : https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900
+Icon-Autor: Google
+MaterialDesign-Icon Adresse: https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css
 
 Quelle 2:
-https://github.com/vuetifyjs/vuetify/blob/master/packages/docs/src/examples/wireframes/extended-toolbar.vue
-Wireframe abgeändert übernommen
+2020-WS-WebProg-Mats-Klein\Projekt\client\src\auth\index.js
+Authentication Wrapper von Auth0 aus dem Tutorial von Auth0 - https://auth0.com/docs/quickstart/spa/vuejs
+Angepasst an das Projekt, so dass es funktioniert (TypeScript Errors vom ESLinter unterdrückt) 
 
 Quelle 3:
-https://www.codermen.com/blog/81/mevn-stack-tutorial-from-scratch-for-the-beginner
-'Step:8 install and connect with mongoDB Database' Einbindung einer MongoDB im selben Stil
+In Datei : 2020-WS-WebProg-Mats-Klein\Projekt\client\src\components\TheHeader.vue
+Wolken Hintergrundbild - Bild-Adresse: https://images.pexels.com/photos/3742709/pexels-photo-3742709.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+Original-Quelle: https://www.pexels.com/photo/white-clouds-and-blue-sky-3742709/
+Autor: Andrew Beatson
+License: Free to Use (Laut Website)
 
-Quelle 4:
-https://developer.mozilla.org/de/docs/Learn/Server-side/Express_Nodejs/mongoose
-Wie wird eine Datenbankanbindung mit mongoose erstellt. Davon einige Snippets abgewandelt bzw. nach dem Schema der
-Seite konzipiert zusammen mit Quelle 5.
-
-Quelle 5:
-https://www.robinwieruch.de/mongodb-express-setup-tutorial
-Ideen und Struktur der Dateien und Ordner nach dieser Seite konzipiert.
+Quelle 4: 
+In Datei: 2020-WS-WebProg-Mats-Klein\Projekt\client\src\assets\pound-box.svg
+Original-Quelle: https://materialdesignicons.com/icon/pound-box
+Autor: Austin Andrews
+Als SVG-Datei heruntergeladen
 
 

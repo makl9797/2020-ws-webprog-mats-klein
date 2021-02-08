@@ -1,3 +1,5 @@
+// Quelle 2 Anfang
+
 import Vue from 'vue'
 import createAuth0Client from '@auth0/auth0-spa-js'
 
@@ -133,3 +135,4 @@ export const Auth0Plugin = {
     Vue.prototype.$auth = useAuth0(options)
   }
 }
+// Quelle 2 - Ende

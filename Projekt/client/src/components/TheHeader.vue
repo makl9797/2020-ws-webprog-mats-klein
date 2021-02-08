@@ -1,6 +1,7 @@
 //Quelle 2: Extended Toolbar Wireframe
 <template>
   <div>
+    <!-- Quelle 3 Nur Link zum Bild-->
     <v-app-bar
       app
       class="mx-auto"
