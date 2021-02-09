@@ -1,8 +1,8 @@
 {
     "mongodb":{
-        "uri": "mongodb+srv://<username>:<password>@<clustername>.fyy1z.mongodb.net/"
+        "uri": "{MongoDB-Adresse}"
     },
     "bearer": {
-        "token": "{Bearer Token for Twitter-API}"
+        "token": "{Bearer Token}"
     }
 }
