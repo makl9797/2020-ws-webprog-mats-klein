@@ -86,7 +86,6 @@ node_modules
 
 # config files with sensitve data
 server-config.json
-auth_config.json
 
 # local env files
 .env.local
