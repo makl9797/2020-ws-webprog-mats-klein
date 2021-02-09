@@ -9,7 +9,7 @@ Info: Ich hatte bereits den Laborschein bei Wolfang Tepper gemacht, deshalb habe
 Anleitung:
 
 Das Projekt ist nach dem MEVN Technologie-Stack gebaut und benutzt somit Vue, Express, NodeJS und MongoDB. NodeJS sollte somit vorher installiert sein.
-Für ein schnelleres Laden der Tweets empfiehlt es sich mongoDB Lokal laufen zu lassen. Es funktioniert aber auch mit einer Datenbank aus der Cloud.
+Für ein schnelleres Laden der Tweets empfiehlt es sich mongoDB lokal auf dem eigenen Rechner laufen zu lassen. Es funktioniert aber auch mit einer Datenbank aus der Cloud.
 
 1. Das Projekt clonen
 
@@ -22,9 +22,11 @@ Für ein schnelleres Laden der Tweets empfiehlt es sich mongoDB Lokal laufen zu 
 5. Eine server-config.json Datei im Ordner 2020-WS-WebProg-Mats-Klein\Projekt\server erstellen. Dafür sollte die 2020-WS-WebProg-Mats-Klein\Projekt\client\server-config.json.sample Datei als Vorlage genutzt werden.
    In dieser müssen der Link zur Mongo-DB und der Bearer Token für die Twitter API angegeben werden.
 
-6. Den Befehl "npm run server" zum starten des Backend-Servers im Ordner 2020-WS-WebProg-Mats-Klein\Projekt\server ausführen
+6. Den Befehl "npm run serve" zum starten des Backend-Servers im Ordner 2020-WS-WebProg-Mats-Klein\Projekt\server ausführen
 
 7. Webseite über http://localhost:8080/ aufrufen
+
+Hinweis: Auth0 funktioniert nur mit der Adresse http://localhost:8080/. Sollte der Port geändert werden, müssten die Callback-URLs auch geändert werden.
 
 Quellen:
 
