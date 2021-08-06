@@ -4,8 +4,6 @@ Matrikelnummer: 630302
 
 E-Mail: mats.klein@stud.hs-flensburg.de
 
-Info: Ich hatte bereits den Laborschein bei Wolfang Tepper gemacht, deshalb habe ich auch nicht so genau auf die Fristen der Meilensteine geachtet.
-
 Anleitung:
 
 Das Projekt ist nach dem MEVN Technologie-Stack gebaut und benutzt somit Vue, Express, NodeJS und MongoDB. NodeJS sollte somit vorher installiert sein.
